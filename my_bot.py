@@ -2,8 +2,8 @@ import requests
 import datetime
 import os
 
-TELEGRAM_TOKEN = os.environ.get('telegram_token')
-WEATHER_TOKEN = os.environ.get('weather_token')
+TELEGRAM_TOKEN = os.environ['telegram_token']
+WEATHER_TOKEN = os.environ['weather_token']
 
 HOURLY_TEMPLATE = '''\nHour: {time}\nActual temp: {actual} celsius\nFeels like: {feelslike} celsius\nCondition: {condition}\n'''
 
