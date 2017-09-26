@@ -6,6 +6,7 @@ TELEGRAM_TOKEN = os.environ.get('telegram_token')
 WEATHER_TOKEN = os.environ.get('weather_token')
 print(TELEGRAM_TOKEN)
 print(WEATHER_TOKEN)
+
 HOURLY_TEMPLATE = '''\nHour: {time}\nActual temp: {actual} celsius\nFeels like: {feelslike} celsius\nCondition: {condition}\n'''
 
 
