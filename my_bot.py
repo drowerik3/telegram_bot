@@ -4,8 +4,6 @@ import os
 
 TELEGRAM_TOKEN = os.environ.get('telegram_token')
 WEATHER_TOKEN = os.environ.get('weather_token')
-print(TELEGRAM_TOKEN)
-print(WEATHER_TOKEN)
 
 HOURLY_TEMPLATE = '''\nHour: {time}\nActual temp: {actual} celsius\nFeels like: {feelslike} celsius\nCondition: {condition}\n'''
 
@@ -51,8 +49,9 @@ class BotHandler:
         method = 'getUpdates'
         params = {'timeout': timeout, 'offset': offset}
         resp = requests.get(self.api_url + method, params)
-        result_json = resp.json()['result']
-        return result_json
+        result_json = resp.json()
+        result = result_json.get('result')
+        return result
 
     def send_message(self, chat_id, text):
         params = {'chat_id': chat_id, 'text': text}
